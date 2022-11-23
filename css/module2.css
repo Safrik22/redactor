@@ -143,6 +143,10 @@ a {
     margin-top: 30px;
 }
 
+.trends {
+ calc((100% - 3 * 4px) / 4);
+}
+
 .trends-img {
     position: relative;
     display: flex;
