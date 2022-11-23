@@ -144,7 +144,7 @@ a {
 }
 
 .trends {
- calc((100% - 3 * 4px) / 4);
+ width: calc((100% - 3 * 4px) / 4);
 }
 
 .trends-img {
