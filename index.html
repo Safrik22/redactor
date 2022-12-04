@@ -118,6 +118,7 @@
                 </div>
             </article>
         </section>
+
       <div class="posts container">
         <main class="main-posts">
           <section class="posts">
@@ -414,6 +415,94 @@
           </section>
         </aside>
       </div>
+      
+      <h2 class="card-title">Наши изделия</h2>
+      <section class="card-section">
+
+        <div class="card-item">
+          <div class="card-img">
+            <picture>
+              <source 
+                media="(min-width: 1200px)"
+                srcset="images/shop-item-desk1.jpg">
+              <source
+                media="(min-width: 641px)"
+                srcset="/images/shop-item-tablet1.jpg">
+              <source
+                media="(max-width: 640px)"
+                srcset="/images/shop-item-mobile1.jpg">
+                <img class="shop-img" src="./images/shop-item-desk1.jpg" alt="picture pillow">
+            </picture>
+          </div>
+          <div class="card-description">
+            <h2 class="card-title-description">Подушки на диван</h2>
+            <p class="card-text">Набор из двух подушек с модными принтами. Видео о создании здесь.</p>
+            <div class="price-wrapper">
+              <div class="price">
+                <p class="price-old">1000 ₽</p>
+                <p class="price-new">800 ₽</p>
+              </div>
+              <a class="shop-btn" href="#0">в магазин</a>
+            </div>
+         </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <picture>
+              <source 
+                media="(min-width: 1200px)"
+                srcset="/images/shop-item-desk2.jpg">
+              <source
+                media="(min-width: 641px)"
+                srcset="/images/shop-item-tablet2.jpg">
+              <source
+                media="(max-width: 640px)"
+                srcset="/images/shop-item-mobile2.jpg">
+                <img class="shop-img" src="./images/shop-item-desk1.jpg" alt="picture doll bunny">
+            </picture>
+          </div>
+          <div class="card-description">
+            <h2 class="card-title-description">Кукла «Зайчик»</h2>
+            <p class="card-text">Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена весенняя серия постов в блоге и несколько подкастов.</p>
+            <div class="price-wrapper">
+              <div class="price">
+                <p class="price-old">500 ₽</p>
+                <p class="price-new">3500 ₽</p>
+              </div>
+              <a class="shop-btn" href="#0">в магазин</a>
+            </div>
+         </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <picture>
+              <source 
+                media="(min-width: 1200px)"
+                srcset="/images/shop-item-desk3.jpg">
+              <source
+                media="(min-width: 641px)"
+                srcset="/images/shop-item-tablet3.jpg">
+              <source
+                media="(max-width: 640px)"
+                srcset="/images/shop-item-mobile3.jpg">
+                <img class="shop-img" src="./images/shop-item-desk3.jpg" alt="picture photoframe">
+            </picture>
+          </div>
+          <div class="card-description">
+            <h2 class="card-title-description">Шестиугольная рамка</h2>
+            <p class="card-text">Hеобычная рамка для украшения дома из видео «Как сделать рамку из подручных средств за 30 минут»</p>
+            <div class="price-wrapper">
+              <div class="price">
+                <p class="price-old">500 ₽</p>
+                <p class="price-new">400 ₽</p>
+              </div>
+              <a class="shop-btn" class="shop" href="#0">в магазин</a>
+            </div>
+         </div>
+        </div>
+      </section>
     
     <footer class="footer">
         <div class="footer-box">
@@ -442,5 +531,64 @@
           </div>
         </div>
       </footer>
+
+      <div class="popup">
+        <div class="popup-container">
+          <div class="your-feedback">
+            <header class="your-feedback-header">
+              <h2>Ваш фидбек</h2>
+            </header>
+            <div class="your-feedback-content">
+              <form class="your-feedback-form">
+
+                <div class="your-feedback-row">
+                  <div class="your-feedback-column">
+                    <label class="your-feedback-label">
+                      <span class="your-feedback-question">Как часто вы заходите на сайт?</span>
+                      <select class="options">
+                        <option value="every day" selected>Почти каждый день</option>
+                        <option value="every few days" selected>Раз в несколько дней</option>
+                        <option value="once a few weeks" selected>Раз в несколько недель</option>
+                        <option value="several time a year" selected>Несколько раз в год</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div class="your-feedback-column">
+                    <label class="your-feedback-label" for="question">
+                      <span class="your-feedback-question">Вы подписаны на e-mail рассылку?</span>
+                      <input class="input-radio" type="radio" name="choice" checked>
+                      <span class="radio-group-text">Да</span>
+                      <input class="input-radio" type="radio" name="choice">
+                      <span class="radio-group-text">Нет</span>
+                    </label>
+                  </div>
+
+                  <div class="your-feedback-column">
+                    <label class="your-feedback-label" for="question">
+                      <span class="your-feedback-question">Расскажите, какой контент вы хотели бы видеть на нашем сайте</span>
+                      <textarea class="your-feedback-textarea" placeholder="Может, больше рецептов?" required></textarea>
+                    </label>
+                  </div>
+
+                  <div class="your-feedback-row">
+                    <button class="your-feedback-button">
+                      <span class="button-label">Отправить</span>
+                    </button>
+
+
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
 </body>
 </html>
