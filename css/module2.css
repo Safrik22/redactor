@@ -32,6 +32,7 @@ a {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -144,7 +145,7 @@ a {
 }
 
 .trends {
- width: calc((100% - 3 * 4px) / 4);
+    width: calc((100% - 3 * 4px) / 4);
 }
 
 .trends-img {
@@ -216,9 +217,6 @@ a {
     border: 2px solid #b59f5b;
     z-index: 2;
 }
-
-
-
 
 
 
@@ -579,6 +577,184 @@ input:focus {
     margin-left: 4px;
 }
 
+
+/* Наши изделия */
+
+.card-title {
+    margin-top: 64px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "OpenSans-Bold", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.card-title:after {
+    content: "";
+    display: block;
+    width: 66px;
+    margin: 14px auto 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #b59f5b;
+}
+
+.card-section {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.card-item {
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img {}
+
+.price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price-old {
+    font-weight: 700;
+    color: #0f0d0e;
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: line-through;
+}
+
+.price-new {
+    font-weight: 800;
+    color: #0f0d0e;
+    font-size: 20px;
+}
+
+.card-description {
+    min-height: 200px;
+    /* min-width: 340px; */
+    padding: 20px 10px;
+    margin-top: -20px;
+
+    border: 2px solid #b59f5b;
+
+    font-family: "OpenSans-Regular", sans-serif;
+    font-weight: 400;
+    
+}
+
+.shop-btn {
+    width: 140px;
+    height: 50px;
+    background-color: #b59f5b;
+    font-family: "OpenSans-Bold", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+
+/* POPUP */
+
+.popup-container {
+    /* display: block; */
+    width: 390px;
+    height: 590px;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #000000;
+    padding: 30px;
+}
+
+.your-feedback-header {
+    font-family: "OpenSans-Bold", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.your-feedback-header:after {
+    content: "";
+    display: block;
+    width: 66px;
+    margin: 14px auto 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #b59f5b;
+}
+
+.your-feedback-label {
+    display: block;
+    font-family: "OpenSans-Bold", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.your-feedback-question {
+    display: block;
+}
+
+.options {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f4f7f6;
+    border: none;
+    font-size: ;
+    font-family: "OpenSans-Bold", sans-serif;
+    color: #0f0d0e;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.options:focus {
+    outline: 2px solid #b59f5b;
+    outline-offset: 4px;
+}
+
+.radio-group-text {
+    font-family: "OpenSans-Bold", sans-serif;
+    font-size: 13px;
+}
+
+.your-feedback-textarea {
+    min-width: 330px;
+    min-height: 130px;
+    border: none;
+    background-color: #f4f7f6;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+.your-feedback-button {
+    display: block;
+    width: 330px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "OpenSans-Bold", sans-serif;
+    color: #fff;
+    background-color: #b59f5b;
+    padding: 15px 0;
+    cursor: pointer;
+    border: none;
+
+}
+
+
 /*Footer*/
 
 .footer {
@@ -636,5 +812,4 @@ input:focus {
     font-family: "OpenSans-Bold", sans-serif;
     font-size: 12px;
     color: #999;
-}   color: #999;
 }
