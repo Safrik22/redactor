@@ -16,6 +16,9 @@
                 alt="логотип">
             </a>
             <nav class="menu">
+              <button class="menu-button menu">
+                <span class="menu-button-label"></span>
+              </button>
               <ul class="menu-list">
                 <li class="list-item">
                   <a href="#0" class="list-item-text">Главная</a>
@@ -436,6 +439,7 @@
           </div>
           <div class="card-description">
             <h2 class="card-title-description">Подушки на диван</h2>
+
             <p class="card-text">Набор из двух подушек с модными принтами. Видео о создании здесь.</p>
             <div class="price-wrapper">
               <div class="price">
@@ -534,61 +538,58 @@
 
       <div class="popup">
         <div class="popup-container">
-          <div class="your-feedback">
-            <header class="your-feedback-header">
+          <div class="popup-body">
+            <header class="popup-header">
               <h2>Ваш фидбек</h2>
             </header>
-            <div class="your-feedback-content">
-              <form class="your-feedback-form">
-
-                <div class="your-feedback-row">
-                  <div class="your-feedback-column">
-                    <label class="your-feedback-label">
-                      <span class="your-feedback-question">Как часто вы заходите на сайт?</span>
-                      <select class="options">
-                        <option value="every day" selected>Почти каждый день</option>
-                        <option value="every few days" selected>Раз в несколько дней</option>
-                        <option value="once a few weeks" selected>Раз в несколько недель</option>
-                        <option value="several time a year" selected>Несколько раз в год</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div class="your-feedback-column">
-                    <label class="your-feedback-label" for="question">
-                      <span class="your-feedback-question">Вы подписаны на e-mail рассылку?</span>
-                      <input class="input-radio" type="radio" name="choice" checked>
-                      <span class="radio-group-text">Да</span>
-                      <input class="input-radio" type="radio" name="choice">
-                      <span class="radio-group-text">Нет</span>
-                    </label>
-                  </div>
-
-                  <div class="your-feedback-column">
-                    <label class="your-feedback-label" for="question">
-                      <span class="your-feedback-question">Расскажите, какой контент вы хотели бы видеть на нашем сайте</span>
-                      <textarea class="your-feedback-textarea" placeholder="Может, больше рецептов?" required></textarea>
-                    </label>
-                  </div>
-
-                  <div class="your-feedback-row">
-                    <button class="your-feedback-button">
-                      <span class="button-label">Отправить</span>
-                    </button>
-
-
-                  </div>
+            <form class="your-feedback-form">
+                <div class="your-feedback-column">
+                  <label class="your-feedback-label">
+                    <span class="your-feedback-question">Как часто вы заходите на сайт?</span>
+                    <select class="options">
+                      <option value="every day" selected>Почти каждый день</option>
+                      <option value="every few days" selected>Раз в несколько дней</option>
+                      <option value="once a few weeks" selected>Раз в несколько недель</option>
+                      <option value="several time a year" selected>Несколько раз в год</option>
+                    </select>
+                  </label>
                 </div>
 
+                <div class="your-feedback-column">
+                  <label class="your-feedback-label" for="question">
+                    <span class="your-feedback-question">Вы подписаны на e-mail рассылку?</span>
+                    <lable class="radio-group">
+                    <input class="input-radio" type="radio" name="choice" checked>
+                    <span class="radio-group-text">Да</span>
+                    </lable>
+                    <lable class="radio-group">
+                    <input class="input-radio" type="radio" name="choice">
+                    <span class="radio-group-text">Нет</span>
+                    </lable>
+                  </label>
+
+                </div>
+                <div class="your-feedback-column">
+                  <label class="your-feedback-label" for="question">
+                    <span class="your-feedback-question">Расскажите, какой контент вы хотели бы видеть на нашем сайте</span>
+                    <textarea class="your-feedback-textarea" placeholder="Может, больше рецептов?" required></textarea>
+                  </label>
+                </div>
+                <div class="your-feedback-row">
+                  <button class="your-feedback-button">
+                    <span class="button-label">Отправить</span>
+                  </button>
+                </div>
               </form>
-
-            </div>
-
-          </div>
-
+              <div class="popup-close">
+                <button class="popup-button">
+                  <span class="button-close">кнопка закрыть</span>
+                </button>
+              </div>
+          </div>       
         </div>
-
       </div>
+
 
 </body>
 </html>
