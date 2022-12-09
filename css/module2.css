@@ -33,7 +33,7 @@ a {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; /*уточнить про выставление min-width (блоки разъезжаются) но как тогда выполнить условие задачи про резиновость */
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -43,6 +43,7 @@ a {
 .header {
     margin-top: 0;
     width: 100%;
+    min-width: 1200px;
     background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
     background-position: top;
     background-repeat: no-repeat;
@@ -99,6 +100,64 @@ a {
 .list-item:hover {
     text-decoration: underline;
 }
+
+/* Бергер меню */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    /* opacity: .5; */
+    
+
+} 
+
+  
+.menu-button span,
+.menu-button span::before,
+.menu-button span::after {
+    position: absolute;
+    top: 50%; margin-top: -2px;
+    width: 20px; margin-left: -10px;
+    height: 4px;
+    background-color: #fff;
+
+}
+
+
+.menu-button span::before,
+.menu-button span::after {
+    content: "";
+}
+
+.menu-button span::before {
+    transform: translateY(-7px);
+}
+
+.menu-button span::after {
+    transform: translateY(7px);
+}
+
+/* @media (min-width: 641px) {
+
+    .menu {
+      text-align: right;
+    }
+  
+    .menu__list-item:not(:first-child) {
+      margin-left: 15px;
+    }
+} */
+
 
 .header-title {
     text-transform: uppercase;
@@ -602,7 +661,7 @@ input:focus {
 .card-section {
     width: 1200px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     margin: auto;
 }
@@ -666,25 +725,42 @@ input:focus {
 
 
 /* POPUP */
-
-.popup-container {
-    /* display: block; */
-    width: 390px;
-    height: 590px;
-    margin: 0 auto;
-    background-color: #fff;
-    color: #000000;
-    padding: 30px;
+/* 
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 2;
 }
 
-.your-feedback-header {
-    font-family: "OpenSans-Bold", sans-serif;
+.popup-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-body {
+    margin: auto;
+    width: 390px;
+    background-color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+}
+
+.popup-header {
+    font-family: "OpenSans-Regular", sans-serif;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
 }
 
-.your-feedback-header:after {
+.popup-header:after {
     content: "";
     display: block;
     width: 66px;
@@ -695,7 +771,7 @@ input:focus {
 
 .your-feedback-label {
     display: block;
-    font-family: "OpenSans-Bold", sans-serif;
+    font-family: "OpenSans-Regular", sans-serif;
     font-weight: 400;
     font-size: 13px;
     margin: 20px 0;
@@ -706,33 +782,81 @@ input:focus {
 }
 
 .options {
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 38px;
+    height: 48px;
     -webkit-appearance: none;
     -moz-appearance: none;
+
+    background-image: url("/svg/form-arrows.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+
+    margin: 0;
+
     background-color: #f4f7f6;
     border: none;
-    font-size: ;
-    font-family: "OpenSans-Bold", sans-serif;
+    font-size:13px;
+    font-family: "OpenSans-Regular", sans-serif;
     color: #0f0d0e;
     margin-top: 10px;
     padding: 10px;
 }
 
+
 .options:focus {
-    outline: 2px solid #b59f5b;
-    outline-offset: 4px;
+    outline: 1px solid #b59f5b;
+    
 }
 
-.radio-group-text {
-    font-family: "OpenSans-Bold", sans-serif;
-    font-size: 13px;
+.radio-group-text::before {
+    content: "";
+    display: inline-block;
+    font-family: "OpenSans-Regular", sans-serif;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url("/svg/form-empty-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+.radio-group {
+    display: inline-block;
+}
+
+.radio-group:nth-of-type(n+2) {
+    margin-left: 10px;
+}
+
+.input-radio:checked ~ .radio-group-text::before {
+    background-image: url("/svg/form-circle.svg");
+}
+
+.input-radio:focus~ .radio-group-text:before {
+    outline: 2px solid #b59f5b;
+    outline-offset: 5px;
+}
+
+.input-radio {
+    position: absolute;
+    display: none;
+    clip: rect(1px 1px 1px 1px);
+    height: 10px;
+    width: 10px;
 }
 
 .your-feedback-textarea {
-    min-width: 330px;
+    width: 100%;
     min-height: 130px;
     border: none;
     background-color: #f4f7f6;
@@ -740,9 +864,10 @@ input:focus {
     margin-top: 12px;
 }
 
+
 .your-feedback-button {
     display: block;
-    width: 330px;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
     font-family: "OpenSans-Bold", sans-serif;
@@ -753,6 +878,21 @@ input:focus {
     border: none;
 
 }
+
+
+
+.button-close {
+    position: absolute;
+    top: -40px;
+    right: 100px;
+    font-size: 14px;
+    cursor: pointer;
+    background-image: url("/svg/form-x.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+
+} */
+
 
 
 /*Footer*/
@@ -812,4 +952,25 @@ input:focus {
     font-family: "OpenSans-Bold", sans-serif;
     font-size: 12px;
     color: #999;
+}
+
+
+/* Резиновая верстка и Адаптив */
+
+@media (min-width: 1200px) {
+
+}
+
+
+
+
+
+/* Мобилка */
+@media (min-width:641px) {
+
+}
+
+@media (max-width: 641px) {
+
+
 }
