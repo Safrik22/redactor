@@ -18,6 +18,12 @@
     box-sizing: border-box;
 }
 
+button {
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
 body {
     color: #0f0d0e;
 }
@@ -33,7 +39,8 @@ a {
 
 .container {
     width: 100%;
-    max-width: 1200px; /*уточнить про выставление min-width (блоки разъезжаются) но как тогда выполнить условие задачи про резиновость */
+    max-width: 1200px;
+    /*уточнить про выставление min-width (блоки разъезжаются) но как тогда выполнить условие задачи про резиновость */
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -117,17 +124,19 @@ a {
     position: relative;
     cursor: pointer;
     /* opacity: .5; */
-    
 
-} 
 
-  
+}
+
+
 .menu-button span,
 .menu-button span::before,
 .menu-button span::after {
     position: absolute;
-    top: 50%; margin-top: -2px;
-    width: 20px; margin-left: -10px;
+    top: 50%;
+    margin-top: -2px;
+    width: 20px;
+    margin-left: -10px;
     height: 4px;
     background-color: #fff;
 
@@ -661,19 +670,31 @@ input:focus {
 .card-section {
     width: 1200px;
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     margin: auto;
+    /* variant 1 */
+    gap: 68px;
 }
+
+/*
+    Отступы между карточками вариант 2
+    .card-item:not(:first-of-type) {
+       margin-left: 50px; 
+    }
+*/
 
 .card-item {
     display: flex;
-    width: 33%;
+    /* из 100% вычитаем отступы между карточками (.card-section gap) и делим на 3 */
+    width: calc((100% - 2 * 68px) / 3);
     flex-direction: column;
     align-items: center;
 }
 
-.card-img {}
+.card-img .shop-img {
+    width: 300px;
+    height: 200px;
+}
 
 .price-wrapper {
     display: flex;
@@ -696,16 +717,26 @@ input:focus {
 }
 
 .card-description {
+    position: relative;
+    flex: 1;
     min-height: 200px;
     /* min-width: 340px; */
-    padding: 20px 10px;
-    margin-top: -20px;
-
-    border: 2px solid #b59f5b;
-
+    padding: 20px 30px;
     font-family: "OpenSans-Regular", sans-serif;
     font-weight: 400;
-    
+    z-index: 1;
+}
+
+.card-description::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 40px);
+    border: 2px solid #b59f5b;
+    z-index: -1;
 }
 
 .shop-btn {
@@ -725,7 +756,7 @@ input:focus {
 
 
 /* POPUP */
-/* 
+
 .popup {
     width: 100%;
     height: 100%;
@@ -769,7 +800,7 @@ input:focus {
     border-bottom: 3px solid #b59f5b;
 }
 
-.your-feedback-label {
+.your-feedback-container {
     display: block;
     font-family: "OpenSans-Regular", sans-serif;
     font-weight: 400;
@@ -779,6 +810,19 @@ input:focus {
 
 .your-feedback-question {
     display: block;
+}
+
+.your-feedback-options {
+    align-items: center;
+
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.your-feedback-options-item {
+    display: flex;
+    align-items: center;
 }
 
 .options {
@@ -798,7 +842,7 @@ input:focus {
 
     background-color: #f4f7f6;
     border: none;
-    font-size:13px;
+    font-size: 13px;
     font-family: "OpenSans-Regular", sans-serif;
     color: #0f0d0e;
     margin-top: 10px;
@@ -808,7 +852,11 @@ input:focus {
 
 .options:focus {
     outline: 1px solid #b59f5b;
-    
+
+}
+
+.radio-group-text {
+    cursor: pointer;
 }
 
 .radio-group-text::before {
@@ -838,11 +886,11 @@ input:focus {
     margin-left: 10px;
 }
 
-.input-radio:checked ~ .radio-group-text::before {
+.input-radio:checked+.radio-group-text::before {
     background-image: url("/svg/form-circle.svg");
 }
 
-.input-radio:focus~ .radio-group-text:before {
+.input-radio:focus+.radio-group-text:before {
     outline: 2px solid #b59f5b;
     outline-offset: 5px;
 }
@@ -879,19 +927,35 @@ input:focus {
 
 }
 
+.popup-button {
+    /* позиционируем кнопку на странице */
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+    height: 18px;
+    width: 18px;
+    /* перезаписываем стили кнопки по умолчнанию */
+    text-decoration: none;
+    border: none;
+    background: none;
+    /* выравниваем компонент с иконкой внутри кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 .button-close {
-    position: absolute;
-    top: -40px;
-    right: 100px;
+    width: 100%;
+    height: 100%;
     font-size: 14px;
     cursor: pointer;
     background-image: url("/svg/form-x.svg");
     background-repeat: no-repeat;
     background-position: left;
 
-} */
+}
 
 
 
@@ -957,20 +1021,13 @@ input:focus {
 
 /* Резиновая верстка и Адаптив */
 
-@media (min-width: 1200px) {
-
-}
+@media (min-width: 1200px) {}
 
 
 
 
 
 /* Мобилка */
-@media (min-width:641px) {
+@media (min-width:641px) {}
 
-}
-
-@media (max-width: 641px) {
-
-
-}
+@media (max-width: 641px) {}
